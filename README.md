@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![architecture](https://user-images.githubusercontent.com/85013922/242484926-935e8a65-b3e4-4dfb-9c79-dd4f5998be0d.png)
-*Application Architecture*
+<img src=https://user-images.githubusercontent.com/85013922/242486429-8b842e16-dc30-4739-a209-99cb1865a612.png width=600 />
+
+*Webpage*
 
 </div>
-
 
 ## Installation
 
@@ -36,3 +36,13 @@ Run `publisher.py` in the mqtt directory. This requires [paho-mqtt](https://pypi
 *Option 2 (Real sensor data)*:
 
 Upload `esp.ino` to an ESP32.
+
+## How it works
+
+<div align="center">
+
+<img src=https://user-images.githubusercontent.com/85013922/242484926-935e8a65-b3e4-4dfb-9c79-dd4f5998be0d.png width=600 />
+
+*Communication Architecture*
+
+</div>
