@@ -35,7 +35,7 @@ Run `publisher.py` in the mqtt directory. This requires [paho-mqtt](https://pypi
 
 *Option 2 (Real sensor data)*:
 
-Upload `esp.ino` to an ESP32.
+Upload `publisher.ino` to an ESP32.
 
 ## How it works
 
