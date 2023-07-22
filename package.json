@@ -9,8 +9,5 @@
   },
   "devDependencies": {
     "vite": "^4.3.9"
-  },
-  "dependencies": {
-    "mqtt": "^4.3.7"
   }
 }
