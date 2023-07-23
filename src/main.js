@@ -25,6 +25,8 @@ const sendMessage = (bpm) => {
   // Replace this function with your actual function to send the message
   console.log("Sending message:", bpm);
   const message = new Paho.Message(bpm); // message the heart rate to the broker
+  // console.log("sending the message to the server at " + performance.now());
+
   message.destinationName = "ucla/hack";
   client.send(message);
 };
@@ -50,10 +52,6 @@ const sendMessagesInIntervals = () => {
 const onConnect = () => {
   console.log("Connected");
   client.subscribe("ucla/hack");
-  const message = new Paho.Message("100"); // message the heart rate to the broker
-  message.destinationName = "ucla/hack";
-  client.send(message);
-
   // Call the function to start sending messages in intervals
   sendMessagesInIntervals();
 };
