@@ -1,4 +1,5 @@
 import './client.js'
+import './style.css'
 import heartLogo from './assets/heart.svg'
 
 
