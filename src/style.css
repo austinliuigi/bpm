@@ -43,6 +43,12 @@ h1 {
   text-align: center;
 }
 
+.heart {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 250ms;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
