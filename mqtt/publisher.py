@@ -1,5 +1,4 @@
 import paho.mqtt.client as mqtt
-import numpy as np
 
 def on_connect(client, userdata, flags, rc):
     print("Connection returned result: " + str(rc))
@@ -20,7 +19,7 @@ client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.on_message = on_message
 
-client.connect("test.mosquitto.org", 1883)
+client.connect("broker.hivemq.com", 1883)
 # client.connect_async("broker.hivemq.com", 8000)
 
 client.loop_start()
@@ -29,40 +28,6 @@ print('Publishing...')
 while True:
     bpm = input("Enter bpm: ")
     client.publish("ucla/hack", bpm, qos=1)
-# for i in range(10):
-#     client.publish("ucla/hack", i, qos=1)
-    # client.publish("ucla/hack", "meow", qos=1)
-#     client.publish("meow/woof", """
-#                                           ▄▀▒▒▄                                 ,
-#                                      ░▄▄ ▌    ░▐    ▄▄                          ,
-#                                     ▒   ▓▒   ░░▐▀  ░░▀                          ,
-#                                     ▀      ░░░░   ░░▌                           ,
-#                                  ▄▀       ░       ░░▌                           ,
-#                             ▄ ░░                  ░░░▀▄                         ,
-#                         ▄░▒░   ▌                    ░░░░▀▄                      ,
-#                       ░  ▀▄▄▄▀                    ░░░ ░░░░▄▓▄                   ,
-#                   ▄▒                                    ░▓▒▒▒░▓▄                ,
-#                 ▄░        ━━━━━━━━━━━━━━━━              ░▐▓▒▒▒▒▓▀▄              ,
-#               ▄░            ▄         ▄                   ░░  ▀▀░░░▀            ,
-#              ▀              █         █     ░░░        ░░░░░░  ░░░░░▐           ,
-#             █▀░░█              ▄▀▀▄                ▄▄░░▒▄▄    ░░░░░░▓           ,
-#            █░░▒▒░▌           ▄▀    ▀▄      ░░    ▄░▒▒▒▒▒▒░▀▄  ░░░░░░░▄          ,
-#           ▐░▒▒▒▒▒▌         ▄▀        ▀▄         ▌▒▒░▒▒▒▒▒▒▒░▌░░░░░░░░▌          ,
-#           ▓▒▒▒▒▒▐▒                              ▌▒▒▒▒▒▒▒▒▒▒▒█   ░░░░░█          ,
-#           █▒▒▒▒░▌             ░░░░     ░░░░░░░░ ▓▒▒▒▒▒▒▒▒▒▒░▌   ░░░░░░  ░▒▒░▄▄  ,
-#         ▄▐▀ ▀▀▀              ░░░     ░░░░░░░    ░▀▓▒▒▒▒▒▒▒▒▀    ░░░░░░▀▀▄▄░░░░▄▌,
-#      ▄▀     ░░  ░     ░░    ░░░░░░░░░░░░░░  ░░░░░░  ▀▀▀▀▀░   ░░░░░░░░░░░░ ▀▀▄   ,
-#   ▄▀       ░░░░     ░░░░░░░░░░░░░░░░░  ░░░░░░░░░░░░░░ ░░░░░░░░░░░░░░░░░░░░░░░▒▄ ,
-#  ▀        ░░▄▓▀    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░  ░░░░░░░░░░ ▀▄▄░░░░░░░░░░░░░░░░▐,
-# ▓░░░░▄▄▀▀▀  ▐     ░░░░ ░░░▄▓▌░░░░░ ░░░░░░░░░█▄   ░  ░░       ▐▓▒▓▀▀▀▀▒▄▄▄▄▄▄▄▀▀ ,
-#             ▌         ░▄▓▓▒▓▓   ░          ▐▒▒▓▄              ▐▌                ,
-#             ▌ ░   ░▄▀▓▒▒▓▓▓▓▒▌            ░▓▓▀░░▀▌▄                             ,
-#              ▀▀▀▀      ▀▀▓▒▒▒░█          ▄▓▌▒▒▒▒▒▒▒▒▀▓▄▄▄░░░▄▓▀                 ,
-#                            █▓▓▒▓▓▄░░░░▄▒▓▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▐                       ,
-#                             ▓▓▓▒▓▓▓██▓▓▓▓▓▀▀▒▒▒▒▒▒▒▒▒▒▒▓                        ,
-#                               ▀▓▒▒▒▒▓▓▓▀     ▀▀▒▒▒▄▄▀▀                          ,
-#
-#    """, qos=1)
 
 client.loop_stop()
 client.disconnect()
